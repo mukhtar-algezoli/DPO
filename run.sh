@@ -14,4 +14,4 @@
 hostname
  
 # python /l/users/rzan.alhaddad/DUB-dysarthria/src/run_translate_with_pseudo.sh --additional_data 0.1 --severity 0
-python main.py --batch_size 16 --epochs 100 --EXP_name Binary_original --wandb_run_name Binary_original
+python main.py 
