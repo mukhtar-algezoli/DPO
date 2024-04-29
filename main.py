@@ -19,14 +19,12 @@ from transformers import (
 from peft import LoraConfig
 from trl import SFTTrainer, DPOTrainer, DPOConfig
 
+load_dotenv()
+
+HF_token = os.getenv("HF_TOKEN")
 
 # load_dotenv()
 # WANDB_API_KEY = os.getenv("WANDB_API_KEY")
-
-
-access_token = "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"
-
-
 
 
 
@@ -125,7 +123,7 @@ def main():
         bnb_4bit_compute_dtype=compute_dtype,
         bnb_4bit_use_double_quant=False,
     )
-    tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B", token=access_token)
+    tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B", token= HF_token)
     model = AutoModelForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B", device_map={"": 0}, quantization_config=quant_config, token=access_token)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
