@@ -17,4 +17,3 @@ peft
 bitsandbytes 
 transformers 
 quanto
-trl
