@@ -124,7 +124,7 @@ def main():
         bnb_4bit_use_double_quant=False,
     )
     tokenizer = AutoTokenizer.from_pretrained("meta-llama/Meta-Llama-3-8B", token= HF_token)
-    model = AutoModelForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B", device_map={"": 0}, quantization_config=quant_config, token=access_token)
+    model = AutoModelForCausalLM.from_pretrained("meta-llama/Meta-Llama-3-8B", device_map={"": 0}, quantization_config=quant_config, token=HF_token)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
