@@ -11,4 +11,4 @@ module purge
 module load python/3.7.9 scipy-stack
 source ~/py37/bin/activate
 
-python main.py
+python3 main.py
